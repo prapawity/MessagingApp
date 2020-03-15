@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -77,6 +77,7 @@
 		0C0E85F12418DBBA003E8507 /* MessagingApp */ = {
 			isa = PBXGroup;
 			children = (
+				0CFBA430241DDDD00025F004 /* DataBidings */,
 				0CFBA409241CC87F0025F004 /* ViewModels */,
 				0CFBA408241CC8770025F004 /* Models */,
 				0CFBA407241CC8690025F004 /* Views */,
@@ -127,6 +128,13 @@
 			path = CellModels;
 			sourceTree = "<group>";
 		};
+		0CFBA430241DDDD00025F004 /* DataBidings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBidings;
+			sourceTree = "<group>";
+		};
 		9ACC23DCC35EF881C9445F2B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +163,7 @@
 				0C0E85EB2418DBBA003E8507 /* Sources */,
 				0C0E85EC2418DBBA003E8507 /* Frameworks */,
 				0C0E85ED2418DBBA003E8507 /* Resources */,
+				DDD936BBF0EE3C78F153EA17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +221,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		DDD936BBF0EE3C78F153EA17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5C9E742371976C4D4A3CA0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class LogInViewController: UIViewController {
 
     @IBOutlet weak var loginView: UIView!
