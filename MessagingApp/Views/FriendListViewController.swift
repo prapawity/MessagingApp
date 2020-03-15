@@ -10,12 +10,25 @@ import UIKit
 
 class FriendListViewController: UIViewController {
 
+    @IBOutlet weak var showFriendsTableView: UITableView!
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tabBarController?.title = "Friends"
+        viewSetup()
         // Do any additional setup after loading the view.
+        
     }
     
+    private func viewSetup(){
+        tabBarController?.title = "Friends"
+        showFriendsTableView.register(UINib(nibName: "FriendListCell", bundle: nil), forCellReuseIdentifier: "friendListCell")
+        showFriendsTableView.delegate = self
+        showFriendsTableView.dataSource = self
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +40,19 @@ class FriendListViewController: UIViewController {
     }
     */
 
+}
+
+extension FriendListViewController: UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = showFriendsTableView.dequeueReusableCell(withIdentifier: "friendListCell", for: indexPath) as! FriendListCell
+        
+        
+        return cell
+    }
+    
+    
 }
