@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import PopupDialog
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    private let viewModel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,15 +34,19 @@ class LogInViewController: UIViewController {
         
     }
     
+    @IBAction func loginAction(_ sender: Any) {
+        viewModel.loginWithEmailandPassword(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (result, reason) in
+            if result == .failed {
+                let popup = PopupDialog(title: "Failed", message: reason, buttonAlignment: .horizontal, transitionStyle: .zoomIn, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: true) {
+                }
+                let button = DefaultButton(title: "OK", dismissOnTap: true){}
+                popup.addButtons([button])
+                self.present(popup, animated: true, completion: nil)
+            } else{
+                self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+            }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        }
     }
-    */
-
+    
 }

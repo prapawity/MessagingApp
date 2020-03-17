@@ -6,5 +6,10 @@ target 'MessagingApp' do
   use_frameworks!
 
   # Pods for MessagingApp
-
+  pod 'Alamofire', '~> 5.0'
+  pod 'Firebase', '~> 6.19'
+  pod 'FirebaseAuth', '~> 6.4'
+  pod 'PopupDialog', '~> 1.1'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
 end

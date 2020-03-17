@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,7 +29,12 @@
 		0CFBA429241DD52D0025F004 /* FriendChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA427241DD52D0025F004 /* FriendChatCell.xib */; };
 		0CFBA42C241DD66C0025F004 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA42A241DD66C0025F004 /* MyChatCell.swift */; };
 		0CFBA42D241DD66C0025F004 /* MyChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA42B241DD66C0025F004 /* MyChatCell.xib */; };
-		0CFBA42F241DD92B0025F004 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA42E241DD92B0025F004 /* GoogleService-Info.plist */; };
+		0CFBA432241DE2720025F004 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA431241DE2720025F004 /* Authentication.swift */; };
+		0CFBA437241DE7A40025F004 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */; };
+		0CFBA439241E158B0025F004 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA438241E158B0025F004 /* SignUpViewModel.swift */; };
+		0CFBA43B241F647D0025F004 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43A241F647D0025F004 /* UserDetail.swift */; };
+		0CFBA43D241F831C0025F004 /* SetNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */; };
+		0CFBA43F241F93240025F004 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43E241F93240025F004 /* LogInViewModel.swift */; };
 		A4401D649268B76E7B6E7458 /* Pods_MessagingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A7F04EB128A0C2C183DDC0 /* Pods_MessagingApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +63,12 @@
 		0CFBA427241DD52D0025F004 /* FriendChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendChatCell.xib; sourceTree = "<group>"; };
 		0CFBA42A241DD66C0025F004 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
 		0CFBA42B241DD66C0025F004 /* MyChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatCell.xib; sourceTree = "<group>"; };
-		0CFBA42E241DD92B0025F004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0CFBA431241DE2720025F004 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0CFBA438241E158B0025F004 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		0CFBA43A241F647D0025F004 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewUserViewController.swift; sourceTree = "<group>"; };
+		0CFBA43E241F93240025F004 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		3046A7634966961D68049202 /* Pods-MessagingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingApp.debug.xcconfig"; path = "Target Support Files/Pods-MessagingApp/Pods-MessagingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A7F04EB128A0C2C183DDC0 /* Pods_MessagingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E800698BFB3F14E581E0CE /* Pods-MessagingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingApp.release.xcconfig"; path = "Target Support Files/Pods-MessagingApp/Pods-MessagingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +107,7 @@
 		0C0E85F12418DBBA003E8507 /* MessagingApp */ = {
 			isa = PBXGroup;
 			children = (
-				0CFBA425241DD3FC0025F004 /* DataBidnigs */,
+				0CFBA425241DD3FC0025F004 /* DataBindings */,
 				0CFBA409241CC87F0025F004 /* ViewModels */,
 				0CFBA408241CC8770025F004 /* Models */,
 				0CFBA407241CC8690025F004 /* Views */,
@@ -106,7 +116,7 @@
 				0C0E85F82418DBBA003E8507 /* Main.storyboard */,
 				0C0E85FB2418DBC0003E8507 /* Assets.xcassets */,
 				0C0E85FD2418DBC0003E8507 /* LaunchScreen.storyboard */,
-				0CFBA42E241DD92B0025F004 /* GoogleService-Info.plist */,
+				0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */,
 				0C0E86002418DBC0003E8507 /* Info.plist */,
 			);
 			path = MessagingApp;
@@ -124,6 +134,7 @@
 				0CFBA417241CCDAF0025F004 /* NavigationViewController.swift */,
 				0CFBA419241CCE760025F004 /* CheckStateLoginViewController.swift */,
 				0CFBA423241DD38F0025F004 /* ChatRoomViewController.swift */,
+				0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -131,6 +142,7 @@
 		0CFBA408241CC8770025F004 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0CFBA433241DE3630025F004 /* DataModels */,
 				0CFBA414241CCBFF0025F004 /* CellModels */,
 			);
 			path = Models;
@@ -139,6 +151,8 @@
 		0CFBA409241CC87F0025F004 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0CFBA438241E158B0025F004 /* SignUpViewModel.swift */,
+				0CFBA43E241F93240025F004 /* LogInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -158,11 +172,20 @@
 			path = CellModels;
 			sourceTree = "<group>";
 		};
-		0CFBA425241DD3FC0025F004 /* DataBidnigs */ = {
+		0CFBA425241DD3FC0025F004 /* DataBindings */ = {
+			isa = PBXGroup;
+			children = (
+				0CFBA431241DE2720025F004 /* Authentication.swift */,
+				0CFBA43A241F647D0025F004 /* UserDetail.swift */,
+			);
+			path = DataBindings;
+			sourceTree = "<group>";
+		};
+		0CFBA433241DE3630025F004 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DataBidnigs;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		9ACC23DCC35EF881C9445F2B /* Pods */ = {
@@ -193,6 +216,7 @@
 				0C0E85EB2418DBBA003E8507 /* Sources */,
 				0C0E85EC2418DBBA003E8507 /* Frameworks */,
 				0C0E85ED2418DBBA003E8507 /* Resources */,
+				2FF22046D177C1EB416A0E0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -242,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0E85FF2418DBC0003E8507 /* LaunchScreen.storyboard in Resources */,
-				0CFBA42F241DD92B0025F004 /* GoogleService-Info.plist in Resources */,
+				0CFBA437241DE7A40025F004 /* GoogleService-Info.plist in Resources */,
 				0CFBA429241DD52D0025F004 /* FriendChatCell.xib in Resources */,
 				0C0E85FC2418DBC0003E8507 /* Assets.xcassets in Resources */,
 				0CFBA422241CFC520025F004 /* ChatListCell.xib in Resources */,
@@ -255,6 +279,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2FF22046D177C1EB416A0E0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessagingApp/Pods-MessagingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5C9E742371976C4D4A3CA0E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,20 +326,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CFBA411241CCBB00025F004 /* ChatListViewController.swift in Sources */,
+				0CFBA439241E158B0025F004 /* SignUpViewModel.swift in Sources */,
 				0CFBA428241DD52D0025F004 /* FriendChatCell.swift in Sources */,
 				0CFBA40D241CC9540025F004 /* FriendListViewController.swift in Sources */,
 				0CFBA416241CCC320025F004 /* SignUpViewController.swift in Sources */,
 				0CFBA42C241DD66C0025F004 /* MyChatCell.swift in Sources */,
 				0CFBA418241CCDAF0025F004 /* NavigationViewController.swift in Sources */,
+				0CFBA43B241F647D0025F004 /* UserDetail.swift in Sources */,
 				0C0E85F32418DBBA003E8507 /* AppDelegate.swift in Sources */,
+				0CFBA43D241F831C0025F004 /* SetNewUserViewController.swift in Sources */,
 				0CFBA424241DD38F0025F004 /* ChatRoomViewController.swift in Sources */,
 				0CFBA41A241CCE760025F004 /* CheckStateLoginViewController.swift in Sources */,
 				0C0E85F52418DBBA003E8507 /* SceneDelegate.swift in Sources */,
 				0CFBA413241CCBEC0025F004 /* ProfileViewController.swift in Sources */,
 				0CFBA41D241CF15A0025F004 /* FriendListCell.swift in Sources */,
 				0CFBA421241CFC520025F004 /* ChatListCell.swift in Sources */,
+				0CFBA43F241F93240025F004 /* LogInViewModel.swift in Sources */,
 				0CFBA40F241CCB110025F004 /* TabbarViewController.swift in Sources */,
 				0CFBA40B241CC8AB0025F004 /* LogInViewController.swift in Sources */,
+				0CFBA432241DE2720025F004 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
