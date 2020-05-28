@@ -142,7 +142,6 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-
 			<integer>25</integer>
 		</dict>
 		<key>PopupDialog.xcscheme</key>

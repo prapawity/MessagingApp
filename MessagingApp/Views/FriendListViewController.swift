@@ -34,17 +34,15 @@ class FriendListViewController: UIViewController {
     
     private func viewSetup(){
         tabBarController?.title = "Friends"
-        UserInformationSingleton.getUserInformationSingleton()
         addAddFriendBtn()
         showFriendsTableView.register(UINib(nibName: "FriendListCell", bundle: nil), forCellReuseIdentifier: "friendListCell")
         showFriendsTableView.delegate = self
         showFriendsTableView.dataSource = self
-        
         viewModel.setUserInfor { (name, image) in
             self.nameLabel.text = name
             self.avatarImage.image = image
         }
-        viewModel.addListenerToView(tavleView: showFriendsTableView)
+        viewModel.addListenerToView(tableView: showFriendsTableView)
     }
     
     @objc private func toAddFriend(){
@@ -84,9 +82,7 @@ extension FriendListViewController: UITableViewDataSource, UITableViewDelegate, 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = showFriendsTableView.dequeueReusableCell(withIdentifier: "friendListCell", for: indexPath) as! FriendListCell
         
-        searchStatus == false ? cell.setCell(email: viewModel.listFriendData[indexPath.row].documentID):cell.setCell(email: viewModel.listFriendQuery[indexPath.row].documentID)
-        
-        
+        searchStatus == false ? cell.setCell(email: viewModel.listFriendData[indexPath.row].0.documentID,image: viewModel.listFriendData[indexPath.row].1) : cell.setCell(email: viewModel.listFriendQuery[indexPath.row].0.documentID, image: viewModel.listFriendQuery[indexPath.row].1)
         return cell
     }
     

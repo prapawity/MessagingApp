@@ -35,7 +35,10 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = viewModel.getFriendChat(index: indexPath.row)
         let cell = showListChatTableViewCell.dequeueReusableCell(withIdentifier: "chatList", for: indexPath) as! ChatListCell
+        let from : String = ((cellData.data()["user1"] as! String) == UserInformationSingleton.userInformation?.0.email! ? cellData.data()["user2"] as! String : cellData.data()["user1"] as! String)
+        cell.settUICell(image: #imageLiteral(resourceName: "logo"), name: from, messageText: cellData.data()["lastText"] as? String ?? "")
         return cell
+        
     }
     
     

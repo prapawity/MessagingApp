@@ -269,9 +269,10 @@
                                 <color key="backgroundColor" red="0.43822420950000002" green="0.70557382719999995" blue="0.88474333380000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-ZZ-bLN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aYS-ZZ-bLN">
                                 <rect key="frame" x="10" y="144" width="394" height="669"/>
                                 <color key="backgroundColor" red="0.4858206511" green="0.77733534569999996" blue="0.96473222970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.4858206511" green="0.77733534569999996" blue="0.96473222970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -320,7 +321,7 @@
                                 <rect key="frame" x="137" y="150" width="140" height="36"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="nMu-1C-DBS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="nMu-1C-DBS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
                                 <state key="normal" title="Finding">
@@ -367,7 +368,7 @@
                                         <rect key="frame" x="127" y="316" width="120" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="VH7-66-Icz"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="VH7-66-Icz"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                         <state key="normal" title="Add">
@@ -464,7 +465,7 @@
                                     <constraint firstAttribute="trailing" secondItem="DuP-vu-w7R" secondAttribute="trailing" constant="10" id="uKe-Uy-seF"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-8m-kdK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-8m-kdK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="720"/>
                                 <color key="backgroundColor" red="0.4858206511" green="0.77733534569999996" blue="0.96473222970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
@@ -680,7 +681,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.4858206511" green="0.77733534569999996" blue="0.96473222970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="hni-Aj-CHC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yjH-z8-70D" secondAttribute="leading" constant="80" id="IAg-ap-Z2R"/>
                             <constraint firstItem="hni-Aj-CHC" firstAttribute="top" secondItem="yjH-z8-70D" secondAttribute="top" constant="20" id="bza-cc-bQh"/>
+                            <constraint firstItem="yjH-z8-70D" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hni-Aj-CHC" secondAttribute="trailing" constant="80" id="n8o-fw-2Ug"/>
                             <constraint firstItem="hni-Aj-CHC" firstAttribute="centerX" secondItem="XOq-n7-oMs" secondAttribute="centerX" id="uw0-HL-JNv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yjH-z8-70D"/>

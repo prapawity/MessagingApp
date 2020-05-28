@@ -29,7 +29,7 @@ struct UserDetailManager: UserDetailManagerProtocol {
     private let db = Firestore.firestore()
     
     func addChatChannel(userEmail: String, friendEmail: String,completion: @escaping (String) -> Void) {
-        db.collection("channel").addDocument(data: ["user1" : userEmail, "user2": friendEmail]).getDocument { (documentSnapshot, error) in
+        db.collection("channel").addDocument(data: ["user1" : userEmail, "user2": friendEmail,"timeStamp": NSDate().timeIntervalSince1970, "lastTextFrom": "", "lastText": ""]).getDocument { (documentSnapshot, error) in
             if error == nil && ((documentSnapshot?.exists) != nil) {
                 completion(documentSnapshot!.documentID)
             } else {

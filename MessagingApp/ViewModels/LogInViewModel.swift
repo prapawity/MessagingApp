@@ -20,7 +20,6 @@ class LoginViewModel {
     }
     
     public func checkStateLogin() -> Bool {
-        print("check", authenManager.checkStateLogin().1)
         return authenManager.checkStateLogin().0
     }
 }

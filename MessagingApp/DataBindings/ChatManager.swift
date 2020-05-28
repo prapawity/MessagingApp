@@ -21,14 +21,14 @@ class ChatManager: ChatManagerProtocol{
             if error != nil {
                 completion(.failed)
             } else{
-                self.updateTimeSending(key: key, text: text)
+                self.updateTimeSending(key: key, email: email, message: text)
                 completion(.success)
             }
         }
     }
     
-    func updateTimeSending(key: String, text: String){
-        db.collection("channel").document(key).setData(["timeStamp": NSDate().timeIntervalSince1970, "lastText": text], merge: true)
+    func updateTimeSending(key: String, email: String, message: String){
+        db.collection("channel").document(key).setData(["timeStamp": NSDate().timeIntervalSince1970, "lastTextFrom": email, "lastText": message], merge: true)
     }
     
     func addChatListener(key: String, completion: @escaping (Result,[QueryDocumentSnapshot]) -> Void) {
@@ -41,11 +41,13 @@ class ChatManager: ChatManagerProtocol{
         }
     }
     func addFriendChatListener(completion: @escaping (Result, [QueryDocumentSnapshot]) -> Void){
-        db.collection("channel").order(by: "timeStamp", descending: false).addSnapshotListener { (query, error) in
+        db.collection("channel").order(by: "timeStamp", descending: true).addSnapshotListener { (query, error) in
             guard error == nil else {
                 return completion(.failed,[])
             }
             completion(.success, query?.documents ?? [])
         }
     }
+    
+
 }

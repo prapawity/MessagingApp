@@ -15,28 +15,29 @@ class UserInformationSingleton{
     private let userManager = UserDetailManager()
     private let imageManager = ImageManager()
     
-    private static var userInformation: (UserDetail, UIImage)?
-    private static var friendList: [(QueryDocumentSnapshot, UIImage)]?
+    public static var userInformation: (UserDetail, UIImage)?
+    private static var friendList: [(QueryDocumentSnapshot, UIImage)] = []
     private static var userInformationSingleton: UserInformationSingleton?
+    
     private var friendNotifyToObserver: [NotifyObserver] = []
+    private var userNotifyToObserver: [NotifyObserver] = []
     
     private init(){
-        setUserInformation()
+        addFriendListener()
     }
     
     public func getUserInformation(completion: @escaping ((UserDetail, UIImage) -> Void)) {
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (timer) in
-            if UserInformationSingleton.userInformation == nil {
-                self.setUserInformation()
-            } else{
-                timer.invalidate()
-                let userData = UserInformationSingleton.userInformation
-                completion(userData!.0, userData!.1)
+        if UserInformationSingleton.userInformation == nil {
+            self.setUserInformation { (data) in
+                completion(data.0, data.1)
             }
+        } else{
+            let userData = UserInformationSingleton.userInformation
+            completion(userData!.0, userData!.1)
         }
     }
     
-    public func setUserInformation(){
+    public func setUserInformation(completion: @escaping (((UserDetail, UIImage)) -> Void)){
         userManager.getUserInformation(email: authenManager.checkStateLogin().1) { (result, userDetail) in
             if result == .success {
                 self.imageManager.downloadImage(path: userDetail.imageUrl!) { (resultFromDowloadImage, image) in
@@ -45,55 +46,107 @@ class UserInformationSingleton{
                     } else{
                         UserInformationSingleton.userInformation = (userDetail, #imageLiteral(resourceName: "logo"))
                     }
+                    completion(UserInformationSingleton.userInformation!)
                     
                 }
             }
         }
     }
     
-    public static func getUserInformationSingleton() -> UserInformationSingleton{
+    public static func getInstance() -> UserInformationSingleton{
         if userInformationSingleton == nil {
             userInformationSingleton = UserInformationSingleton()
         }
         return userInformationSingleton!
     }
     
+    public static func getFriendList() -> [(QueryDocumentSnapshot, UIImage)]{
+        return UserInformationSingleton.friendList
+    }
     
     
-    private func addFriendListener(){
-        
+    public func addFriendListener(){
         userManager.getFriendListener(userEmail: authenManager.checkStateLogin().1) { (result, queryDocSnapshot) in
+            
             if result == .success {
-                for i in queryDocSnapshot{
-                    self.imageManager.downloadImage(path: i.data()["imageUrl"] as! String) { (resultDowloading, image) in
-                        if resultDowloading == .success {
-                            UserInformationSingleton.friendList?.append((i, image))
-                        } else{
-                            UserInformationSingleton.friendList?.append((i, #imageLiteral(resourceName: "logo")))
+                
+                UserInformationSingleton.friendList = []
+                
+                queryDocSnapshot.forEach { (queryDocumentSnapshot) in
+                    
+                    self.userManager.getUserInformation(email: (queryDocumentSnapshot.data()["email"] as? String)!) { (result, getFriend) in
+                        
+                        if result == .success{
+                            if getFriend.imageUrl != ""{
+                                self.imageManager.downloadImage(path: getFriend.imageUrl!) { (resultDowloading, image) in
+                                    if resultDowloading == .success {
+                                        UserInformationSingleton.friendList.append((queryDocumentSnapshot, image))
+                                    } else{
+                                        UserInformationSingleton.friendList.append((queryDocumentSnapshot, #imageLiteral(resourceName: "logo")))
+                                    }
+                                    self.friendUpdate()
+
+                                }
+                            }else{
+                                UserInformationSingleton.friendList.append((queryDocumentSnapshot, #imageLiteral(resourceName: "logo")))
+                                self.friendUpdate()
+                            }
+                        }
+                        
+                        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (timer) in
+                            if UserInformationSingleton.friendList.count == queryDocSnapshot.count {
+                                timer.invalidate()
+                                self.friendUpdate()
+                            }
                         }
                     }
                 }
-                self.friendUpdate()
+
             }
 
         }
+    }
+    
+    public func queryFriend(email: String) -> ((QueryDocumentSnapshot, UIImage)){
+        var result: (QueryDocumentSnapshot, UIImage)?
+        UserInformationSingleton.friendList.forEach { (data) in
+            if data.0["email"] as! String == email{
+                result = data
+            }
+        }
+        return result!
     }
     
 
 }
 
 extension UserInformationSingleton: NotifyObservee{
+    
+    func registerUserObserver(observer: NotifyObserver) {
+        userNotifyToObserver.append(observer)
+    }
+    
+    
+    func userUpdate() {
+        userNotifyToObserver.forEach { (observer) in
+            observer.userInformationUpdate(newInformation: UserInformationSingleton.userInformation!)
+        }
+        
+    }
+    
 
     
-    func registerObserver(observer: NotifyObserver) {
+    func registerFriendObserver(observer: NotifyObserver) {
         friendNotifyToObserver.append(observer)
     }
     
     func friendUpdate() {
-        friendNotifyToObserver.map { (observer) -> Void in
-            observer.friendUpdate()
+        friendNotifyToObserver.forEach { (observer) in
+            observer.friendUpdate(updateData: UserInformationSingleton.friendList)
         }
     }
+    
+    
     
     
 }

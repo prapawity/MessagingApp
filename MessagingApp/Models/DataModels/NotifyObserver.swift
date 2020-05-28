@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import FirebaseFirestore
+
 protocol NotifyObserver {
-    func friendUpdate() -> Void
+    func friendUpdate(updateData: [(QueryDocumentSnapshot, UIImage)]) -> Void
+    func userInformationUpdate(newInformation: (UserDetail, UIImage)) -> Void
 }
 
 protocol NotifyObservee {
-    func registerObserver(observer: NotifyObserver)
+    func registerFriendObserver(observer: NotifyObserver)
+    func registerUserObserver(observer: NotifyObserver)
     func friendUpdate()
+    func userUpdate()
 }

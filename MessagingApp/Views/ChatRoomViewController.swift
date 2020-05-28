@@ -9,6 +9,7 @@
 import UIKit
 
 class ChatRoomViewController: UIViewController {
+    
     var viewModel: ChatRoomViewModel!
     
     @IBOutlet weak var textField: UITextField!
@@ -25,6 +26,7 @@ class ChatRoomViewController: UIViewController {
         chatTableView.dataSource = self
         chatTableView.register(UINib(nibName: "MyChatCell", bundle: nil), forCellReuseIdentifier: "myChatCell")
         chatTableView.register(UINib(nibName: "FriendChatCell", bundle: nil), forCellReuseIdentifier: "friendChatCell")
+        self.title = (viewModel.getFriend().data()["email"] as! String)
         
     }
     
@@ -54,12 +56,12 @@ extension ChatRoomViewController: UITableViewDataSource, UITableViewDelegate{
 
         if cellData.data()["from"] as! String == viewModel.getUserEmail(){
             let cell = chatTableView.dequeueReusableCell(withIdentifier: "myChatCell") as! MyChatCell
-            cell.setupCell(image: viewModel.getUserAvatar(),message: cellData.data()["message"] as! String)
+            cell.setupCell(image: viewModel.getUserAvatar(), message: cellData.data()["message"] as! String)
 
             return cell
         }else{
             let cell = chatTableView.dequeueReusableCell(withIdentifier: "friendChatCell") as! FriendChatCell
-            cell.setupCell(image: viewModel.getFriendAvatar(),message: cellData.data()["message"] as! String)
+            cell.setupCell(image: viewModel.getFriendAvatar(), message: cellData.data()["message"] as! String)
             return cell
         }
         

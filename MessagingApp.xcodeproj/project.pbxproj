@@ -15,7 +15,6 @@
 		0C32BD762440873C0007AB72 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD752440873C0007AB72 /* AddFriendViewController.swift */; };
 		0C32BD78244092A40007AB72 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */; };
 		0C32BD7A244185DC0007AB72 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */; };
-		0C32BD7C2441C12E0007AB72 /* FriendListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */; };
 		0C32BD7E2442E9920007AB72 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD7D2442E9920007AB72 /* ChatManager.swift */; };
 		0C756C54245F022F00A5BF23 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */; };
 		0C756C5624600C2C00A5BF23 /* UserInformationSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */; };
@@ -61,7 +60,6 @@
 		0C32BD752440873C0007AB72 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
 		0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
-		0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCellViewModel.swift; sourceTree = "<group>"; };
 		0C32BD7D2442E9920007AB72 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationSingleton.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				0CFBA4442420D9DA0025F004 /* SetNewUserViewModel.swift */,
 				0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */,
 				0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */,
-				0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */,
 				0CCEBEA524488A2D0089D8BB /* ChatListViewModel.swift */,
 				0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */,
 			);
@@ -379,7 +376,6 @@
 				0CFBA418241CCDAF0025F004 /* NavigationViewController.swift in Sources */,
 				0CFBA43B241F647D0025F004 /* UserInformation.swift in Sources */,
 				0CCEBEA624488A2D0089D8BB /* ChatListViewModel.swift in Sources */,
-				0C32BD7C2441C12E0007AB72 /* FriendListCellViewModel.swift in Sources */,
 				0C32BD78244092A40007AB72 /* AddFriendViewModel.swift in Sources */,
 				0C0E85F32418DBBA003E8507 /* AppDelegate.swift in Sources */,
 				0C756C5624600C2C00A5BF23 /* UserInformationSingleton.swift in Sources */,

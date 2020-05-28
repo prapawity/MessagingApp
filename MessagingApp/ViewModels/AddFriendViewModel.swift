@@ -5,10 +5,9 @@
 //  Created by Prapawit Patthasirivichot on 10/4/2563 BE.
 //  Copyright © 2563 Prapawit Patthasirivichot. All rights reserved.
 //
-
-import Foundation
 import UIKit
 class AddFriendViewModel {
+    
     private let userManager = UserDetailManager()
     private let authenManager = AuthenticationManager()
     private let imageManager = ImageManager()

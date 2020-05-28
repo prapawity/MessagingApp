@@ -31,7 +31,10 @@ class LogInViewController: UIViewController {
         
         // use This
         if viewModel.checkStateLogin() {
-//            performSegue(withIdentifier: "loginSuccess", sender: nil)
+//            UserInformationSingleton.getInstance().setUserInformation { (data) in
+//                self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+//                self.activityIndicator.isHidden = true
+//            }
         }
         loadingView.isHidden = true
         loginView.isHidden = false
@@ -39,15 +42,22 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        loadingView.isHidden = false
+        loginView.isHidden = true
         viewModel.loginWithEmailandPassword(email: emailTextField.text ?? "", password: passwordTextField.text ?? "") { (result, reason) in
             if result == .failed {
+                self.loadingView.isHidden = true
+                self.loginView.isHidden = false
                 let popup = PopupDialog(title: "Failed", message: reason, buttonAlignment: .horizontal, transitionStyle: .zoomIn, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: true) {
                 }
                 let button = DefaultButton(title: "OK", dismissOnTap: true){}
                 popup.addButtons([button])
                 self.present(popup, animated: true, completion: nil)
             } else{
-                self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+                UserInformationSingleton.getInstance().setUserInformation { (data) in
+                    print("check : " ,data)
+                    self.performSegue(withIdentifier: "loginSuccess", sender: nil)
+                }
             }
 
         }
