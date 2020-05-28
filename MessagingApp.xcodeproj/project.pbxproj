@@ -66,6 +66,7 @@
 		0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationSingleton.swift; sourceTree = "<group>"; };
 		0C756C572460147700A5BF23 /* NotifyObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyObserver.swift; sourceTree = "<group>"; };
+		0CC344EE247FD1820044FF04 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CCEBEA524488A2D0089D8BB /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		0CFBA40A241CC8AB0025F004 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0CFBA40C241CC9540025F004 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				0C0E85F42418DBBA003E8507 /* SceneDelegate.swift */,
 				0C0E85F82418DBBA003E8507 /* Main.storyboard */,
 				0C0E85FB2418DBC0003E8507 /* Assets.xcassets */,
+				0CC344EE247FD1820044FF04 /* Info.plist */,
 				0C0E85FD2418DBC0003E8507 /* LaunchScreen.storyboard */,
 				0CFBA4422420BB570025F004 /* GoogleService-Info.plist */,
 			);
