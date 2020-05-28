@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendChatCell" rowHeight="245" id="KGk-i7-Jjw" customClass="FriendChatCell" customModule="MessagingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="245"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="458" height="245"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ynC-hE-x2B">
+                        <rect key="frame" x="10" y="10" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="tqL-ej-vtG"/>
+                            <constraint firstAttribute="height" constant="50" id="w5j-A2-fwA"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyM-of-j2E">
+                        <rect key="frame" x="75" y="20" width="373" height="215"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3C-8o-e0N">
+                                <rect key="frame" x="10" y="10" width="353" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95331591370000002" green="0.76503473519999998" blue="0.27041670680000002" alpha="0.55963720034246578" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="f3C-8o-e0N" firstAttribute="top" secondItem="MyM-of-j2E" secondAttribute="top" constant="10" id="Clk-kP-D0K"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="f3C-8o-e0N" secondAttribute="bottom" constant="10" id="K6j-uk-VyC"/>
+                            <constraint firstItem="f3C-8o-e0N" firstAttribute="leading" secondItem="MyM-of-j2E" secondAttribute="leading" constant="10" id="d0q-gb-zgF"/>
+                            <constraint firstAttribute="trailing" secondItem="f3C-8o-e0N" secondAttribute="trailing" constant="10" id="i6A-BX-JsC"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ynC-hE-x2B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JJh-RM-LPs"/>
+                    <constraint firstAttribute="trailing" secondItem="MyM-of-j2E" secondAttribute="trailing" constant="10" id="K4b-dj-PQu"/>
+                    <constraint firstItem="MyM-of-j2E" firstAttribute="leading" secondItem="ynC-hE-x2B" secondAttribute="trailing" constant="15" id="dDN-NE-xXQ"/>
+                    <constraint firstItem="MyM-of-j2E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="fLZ-Zg-0Gw"/>
+                    <constraint firstItem="ynC-hE-x2B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gjT-nA-i32"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ynC-hE-x2B" secondAttribute="bottom" constant="10" id="uC6-KE-LiC"/>
+                    <constraint firstAttribute="bottom" secondItem="MyM-of-j2E" secondAttribute="bottom" constant="10" id="vN3-wA-TDu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageAvatar" destination="ynC-hE-x2B" id="Dvy-9d-qsI"/>
+                <outlet property="messageText" destination="f3C-8o-e0N" id="x8S-gb-x9b"/>
+            </connections>
+            <point key="canvasLocation" x="237.68115942028987" y="189.84375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="logo" width="1371" height="896"/>
+    </resources>
+</document>
