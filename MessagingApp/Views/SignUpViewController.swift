@@ -10,10 +10,12 @@ import UIKit
 import PopupDialog
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var activityIncicator: UIActivityIndicatorView!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var confirmPasswordTextfield: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var textfieldStack: UIStackView!
     
     
     private let viewModel = SignUpViewModel()
@@ -25,25 +27,45 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signupUserAction(_ sender: Any) {
-        viewModel.signupNewUserWithEmailandPassword(email: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", conPassword: confirmPasswordTextfield.text ?? "") { (RegisterResultCompletion, reason) in
+        loading(state: true)
+        
+        viewModel.signupNewUserWithEmailandPassword(email: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", conPassword: confirmPasswordTextfield.text ?? "") { (registerResultCompletion, reason) in
             var title: String!
             var message: String!
             var button: DefaultButton!
-            if RegisterResultCompletion == .success {
+            
+            if registerResultCompletion == .success {
                 title = "Register Successfully"
-                message = "Back to Login page and Login again"
+                message = "Please Click OK to continue"
                 button = DefaultButton(title: "OK", dismissOnTap: true){
-                    self.performSegue(withIdentifier: "newUser", sender: nil)
+                    self.loading(state: false)
+                    self.performSegue(withIdentifier: "newUser", sender: self.emailTextfield.text!)
                 }
             } else{
                 title = "Register Failure"
                 message = reason
-                button = DefaultButton(title: "OK", dismissOnTap: true){}
+                button = DefaultButton(title: "OK", dismissOnTap: true){
+                    self.loading(state: false)
+                }
             }
-            let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, tapGestureDismissal: true, panGestureDismissal: true, hideStatusBar: true) {}
+            let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, tapGestureDismissal: false, panGestureDismissal: false, hideStatusBar: true) {}
              popup.addButtons([button])
             self.present(popup, animated: true, completion: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newUser"{
+            if let destination = segue.destination as? SetNewUserViewController{
+                destination.userEmail = sender as? String
+            }
+        }
+    }
+    
+    private func loading(state: Bool){
+        activityIncicator.isHidden = !state
+        textfieldStack.isHidden = state
+        registerButton.isHidden = state
     }
     
 }

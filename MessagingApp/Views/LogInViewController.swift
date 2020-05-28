@@ -19,18 +19,22 @@ class LogInViewController: UIViewController {
     private let viewModel = LoginViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupUI()
     }
     
     private func setupUI(){
         activityIndicator.startAnimating()
-        if UserDefaults.standard.object(forKey: "userDetail") != nil {
-            
-        }else{
-            loadingView.isHidden = true
-            loginView.isHidden = false
+        
+        // use This
+        if viewModel.checkStateLogin() {
+//            performSegue(withIdentifier: "loginSuccess", sender: nil)
         }
+        loadingView.isHidden = true
+        loginView.isHidden = false
         
     }
     

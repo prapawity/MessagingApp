@@ -12,6 +12,15 @@
 		0C0E85FA2418DBBA003E8507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E85F82418DBBA003E8507 /* Main.storyboard */; };
 		0C0E85FC2418DBC0003E8507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E85FB2418DBC0003E8507 /* Assets.xcassets */; };
 		0C0E85FF2418DBC0003E8507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0E85FD2418DBC0003E8507 /* LaunchScreen.storyboard */; };
+		0C32BD762440873C0007AB72 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD752440873C0007AB72 /* AddFriendViewController.swift */; };
+		0C32BD78244092A40007AB72 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */; };
+		0C32BD7A244185DC0007AB72 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */; };
+		0C32BD7C2441C12E0007AB72 /* FriendListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */; };
+		0C32BD7E2442E9920007AB72 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C32BD7D2442E9920007AB72 /* ChatManager.swift */; };
+		0C756C54245F022F00A5BF23 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */; };
+		0C756C5624600C2C00A5BF23 /* UserInformationSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */; };
+		0C756C582460147700A5BF23 /* NotifyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C756C572460147700A5BF23 /* NotifyObserver.swift */; };
+		0CCEBEA624488A2D0089D8BB /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEBEA524488A2D0089D8BB /* ChatListViewModel.swift */; };
 		0CFBA40B241CC8AB0025F004 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA40A241CC8AB0025F004 /* LogInViewController.swift */; };
 		0CFBA40D241CC9540025F004 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA40C241CC9540025F004 /* FriendListViewController.swift */; };
 		0CFBA40F241CCB110025F004 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA40E241CCB110025F004 /* TabbarViewController.swift */; };
@@ -30,11 +39,15 @@
 		0CFBA42C241DD66C0025F004 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA42A241DD66C0025F004 /* MyChatCell.swift */; };
 		0CFBA42D241DD66C0025F004 /* MyChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA42B241DD66C0025F004 /* MyChatCell.xib */; };
 		0CFBA432241DE2720025F004 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA431241DE2720025F004 /* Authentication.swift */; };
-		0CFBA437241DE7A40025F004 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */; };
 		0CFBA439241E158B0025F004 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA438241E158B0025F004 /* SignUpViewModel.swift */; };
-		0CFBA43B241F647D0025F004 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43A241F647D0025F004 /* UserDetail.swift */; };
+		0CFBA43B241F647D0025F004 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43A241F647D0025F004 /* UserInformation.swift */; };
 		0CFBA43D241F831C0025F004 /* SetNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */; };
 		0CFBA43F241F93240025F004 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA43E241F93240025F004 /* LogInViewModel.swift */; };
+		0CFBA4412420B1B50025F004 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA4402420B1B50025F004 /* UserDetail.swift */; };
+		0CFBA4432420BB570025F004 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CFBA4422420BB570025F004 /* GoogleService-Info.plist */; };
+		0CFBA4452420D9DA0025F004 /* SetNewUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA4442420D9DA0025F004 /* SetNewUserViewModel.swift */; };
+		0CFBA44724235A1C0025F004 /* UserLoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA44624235A1C0025F004 /* UserLoginState.swift */; };
+		0CFBA44924235B880025F004 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFBA44824235B880025F004 /* ImageManager.swift */; };
 		A4401D649268B76E7B6E7458 /* Pods_MessagingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A7F04EB128A0C2C183DDC0 /* Pods_MessagingApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +58,15 @@
 		0C0E85F92418DBBA003E8507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C0E85FB2418DBC0003E8507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C0E85FE2418DBC0003E8507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0C0E86002418DBC0003E8507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C32BD752440873C0007AB72 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
+		0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
+		0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCellViewModel.swift; sourceTree = "<group>"; };
+		0C32BD7D2442E9920007AB72 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
+		0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationSingleton.swift; sourceTree = "<group>"; };
+		0C756C572460147700A5BF23 /* NotifyObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyObserver.swift; sourceTree = "<group>"; };
+		0CCEBEA524488A2D0089D8BB /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		0CFBA40A241CC8AB0025F004 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0CFBA40C241CC9540025F004 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		0CFBA40E241CCB110025F004 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -64,11 +85,15 @@
 		0CFBA42A241DD66C0025F004 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
 		0CFBA42B241DD66C0025F004 /* MyChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatCell.xib; sourceTree = "<group>"; };
 		0CFBA431241DE2720025F004 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0CFBA438241E158B0025F004 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		0CFBA43A241F647D0025F004 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		0CFBA43A241F647D0025F004 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewUserViewController.swift; sourceTree = "<group>"; };
 		0CFBA43E241F93240025F004 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		0CFBA4402420B1B50025F004 /* UserDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
+		0CFBA4422420BB570025F004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0CFBA4442420D9DA0025F004 /* SetNewUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNewUserViewModel.swift; sourceTree = "<group>"; };
+		0CFBA44624235A1C0025F004 /* UserLoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginState.swift; sourceTree = "<group>"; };
+		0CFBA44824235B880025F004 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		3046A7634966961D68049202 /* Pods-MessagingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingApp.debug.xcconfig"; path = "Target Support Files/Pods-MessagingApp/Pods-MessagingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A7F04EB128A0C2C183DDC0 /* Pods_MessagingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E800698BFB3F14E581E0CE /* Pods-MessagingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagingApp.release.xcconfig"; path = "Target Support Files/Pods-MessagingApp/Pods-MessagingApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +141,7 @@
 				0C0E85F82418DBBA003E8507 /* Main.storyboard */,
 				0C0E85FB2418DBC0003E8507 /* Assets.xcassets */,
 				0C0E85FD2418DBC0003E8507 /* LaunchScreen.storyboard */,
-				0CFBA436241DE7A40025F004 /* GoogleService-Info.plist */,
-				0C0E86002418DBC0003E8507 /* Info.plist */,
+				0CFBA4422420BB570025F004 /* GoogleService-Info.plist */,
 			);
 			path = MessagingApp;
 			sourceTree = "<group>";
@@ -135,6 +159,7 @@
 				0CFBA419241CCE760025F004 /* CheckStateLoginViewController.swift */,
 				0CFBA423241DD38F0025F004 /* ChatRoomViewController.swift */,
 				0CFBA43C241F831C0025F004 /* SetNewUserViewController.swift */,
+				0C32BD752440873C0007AB72 /* AddFriendViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +178,12 @@
 			children = (
 				0CFBA438241E158B0025F004 /* SignUpViewModel.swift */,
 				0CFBA43E241F93240025F004 /* LogInViewModel.swift */,
+				0CFBA4442420D9DA0025F004 /* SetNewUserViewModel.swift */,
+				0C32BD77244092A40007AB72 /* AddFriendViewModel.swift */,
+				0C32BD79244185DC0007AB72 /* FriendListViewModel.swift */,
+				0C32BD7B2441C12E0007AB72 /* FriendListCellViewModel.swift */,
+				0CCEBEA524488A2D0089D8BB /* ChatListViewModel.swift */,
+				0C756C53245F022F00A5BF23 /* ChatRoomViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -176,7 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				0CFBA431241DE2720025F004 /* Authentication.swift */,
-				0CFBA43A241F647D0025F004 /* UserDetail.swift */,
+				0CFBA43A241F647D0025F004 /* UserInformation.swift */,
+				0CFBA44824235B880025F004 /* ImageManager.swift */,
+				0C32BD7D2442E9920007AB72 /* ChatManager.swift */,
 			);
 			path = DataBindings;
 			sourceTree = "<group>";
@@ -184,6 +217,10 @@
 		0CFBA433241DE3630025F004 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				0CFBA4402420B1B50025F004 /* UserDetail.swift */,
+				0CFBA44624235A1C0025F004 /* UserLoginState.swift */,
+				0C756C5524600C2C00A5BF23 /* UserInformationSingleton.swift */,
+				0C756C572460147700A5BF23 /* NotifyObserver.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -266,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0E85FF2418DBC0003E8507 /* LaunchScreen.storyboard in Resources */,
-				0CFBA437241DE7A40025F004 /* GoogleService-Info.plist in Resources */,
+				0CFBA4432420BB570025F004 /* GoogleService-Info.plist in Resources */,
 				0CFBA429241DD52D0025F004 /* FriendChatCell.xib in Resources */,
 				0C0E85FC2418DBC0003E8507 /* Assets.xcassets in Resources */,
 				0CFBA422241CFC520025F004 /* ChatListCell.xib in Resources */,
@@ -326,23 +363,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CFBA411241CCBB00025F004 /* ChatListViewController.swift in Sources */,
+				0CFBA4412420B1B50025F004 /* UserDetail.swift in Sources */,
+				0C756C582460147700A5BF23 /* NotifyObserver.swift in Sources */,
 				0CFBA439241E158B0025F004 /* SignUpViewModel.swift in Sources */,
+				0CFBA44924235B880025F004 /* ImageManager.swift in Sources */,
 				0CFBA428241DD52D0025F004 /* FriendChatCell.swift in Sources */,
 				0CFBA40D241CC9540025F004 /* FriendListViewController.swift in Sources */,
+				0CFBA4452420D9DA0025F004 /* SetNewUserViewModel.swift in Sources */,
+				0CFBA44724235A1C0025F004 /* UserLoginState.swift in Sources */,
+				0C756C54245F022F00A5BF23 /* ChatRoomViewModel.swift in Sources */,
 				0CFBA416241CCC320025F004 /* SignUpViewController.swift in Sources */,
 				0CFBA42C241DD66C0025F004 /* MyChatCell.swift in Sources */,
 				0CFBA418241CCDAF0025F004 /* NavigationViewController.swift in Sources */,
-				0CFBA43B241F647D0025F004 /* UserDetail.swift in Sources */,
+				0CFBA43B241F647D0025F004 /* UserInformation.swift in Sources */,
+				0CCEBEA624488A2D0089D8BB /* ChatListViewModel.swift in Sources */,
+				0C32BD7C2441C12E0007AB72 /* FriendListCellViewModel.swift in Sources */,
+				0C32BD78244092A40007AB72 /* AddFriendViewModel.swift in Sources */,
 				0C0E85F32418DBBA003E8507 /* AppDelegate.swift in Sources */,
+				0C756C5624600C2C00A5BF23 /* UserInformationSingleton.swift in Sources */,
 				0CFBA43D241F831C0025F004 /* SetNewUserViewController.swift in Sources */,
 				0CFBA424241DD38F0025F004 /* ChatRoomViewController.swift in Sources */,
 				0CFBA41A241CCE760025F004 /* CheckStateLoginViewController.swift in Sources */,
+				0C32BD7E2442E9920007AB72 /* ChatManager.swift in Sources */,
 				0C0E85F52418DBBA003E8507 /* SceneDelegate.swift in Sources */,
 				0CFBA413241CCBEC0025F004 /* ProfileViewController.swift in Sources */,
 				0CFBA41D241CF15A0025F004 /* FriendListCell.swift in Sources */,
 				0CFBA421241CFC520025F004 /* ChatListCell.swift in Sources */,
 				0CFBA43F241F93240025F004 /* LogInViewModel.swift in Sources */,
 				0CFBA40F241CCB110025F004 /* TabbarViewController.swift in Sources */,
+				0C32BD7A244185DC0007AB72 /* FriendListViewModel.swift in Sources */,
+				0C32BD762440873C0007AB72 /* AddFriendViewController.swift in Sources */,
 				0CFBA40B241CC8AB0025F004 /* LogInViewController.swift in Sources */,
 				0CFBA432241DE2720025F004 /* Authentication.swift in Sources */,
 			);

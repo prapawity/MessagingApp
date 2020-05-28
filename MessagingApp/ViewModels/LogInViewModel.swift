@@ -11,11 +11,16 @@ import Foundation
 class LoginViewModel {
     private let authenManager = AuthenticationManager()
     
-    public func loginWithEmailandPassword(email: String, password: String, completion: @escaping (RegisterResult, String) -> Void){
-        guard email != "" else {return completion(RegisterResult.failed, "Please fill Email")}
-        guard password != "" else {return completion(RegisterResult.failed, "Please fill Password")}
+    public func loginWithEmailandPassword(email: String, password: String, completion: @escaping (Result, String) -> Void){
+        guard email != "" else {return completion(Result.failed, "Please fill Email")}
+        guard password != "" else {return completion(Result.failed, "Please fill Password")}
         authenManager.getUserFromLogin(email: email, password: password) { (RegisterResult, reason) in
             completion(RegisterResult, reason)
         }
+    }
+    
+    public func checkStateLogin() -> Bool {
+        print("check", authenManager.checkStateLogin().1)
+        return authenManager.checkStateLogin().0
     }
 }

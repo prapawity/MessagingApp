@@ -10,6 +10,9 @@ import UIKit
 
 class ChatListCell: UITableViewCell {
 
+    @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var avaterImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +22,12 @@ class ChatListCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func settUICell(image: UIImage, name: String, messageText: String){
+        avaterImage.image = image
+        friendName.text = name
+        message.text = messageText
     }
     
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,8 +58,13 @@
                     <constraint firstAttribute="trailing" secondItem="XQn-g9-kGJ" secondAttribute="trailing" constant="10" id="U9Z-Sm-3s4"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.4858206511" green="0.77733534569999996" blue="0.96473222970000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="avaterImage" destination="uMW-no-gWX" id="cF4-e0-8BO"/>
+                <outlet property="friendName" destination="WLq-8r-kpP" id="cXp-xm-x2u"/>
+                <outlet property="message" destination="UAK-p9-F1o" id="laL-x7-niN"/>
+            </connections>
             <point key="canvasLocation" x="221.73913043478262" y="158.03571428571428"/>
         </tableViewCell>
     </objects>

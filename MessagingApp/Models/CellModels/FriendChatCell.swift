@@ -9,7 +9,9 @@
 import UIKit
 
 class FriendChatCell: UITableViewCell {
-
+    @IBOutlet weak var messageText: UILabel!
+    @IBOutlet weak var imageAvatar: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,12 @@ class FriendChatCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(image: UIImage, message: String){
+        imageAvatar.image = image
+        messageText.text = message
+        
     }
     
 }

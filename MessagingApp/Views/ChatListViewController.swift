@@ -9,7 +9,7 @@
 import UIKit
 
 class ChatListViewController: UIViewController {
-
+    var viewModel = ChatListViewModel()
     @IBOutlet weak var showListChatTableViewCell: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,28 +18,22 @@ class ChatListViewController: UIViewController {
     }
     
     private func viewSetup(){
+        tabBarController?.title = "Chat"
+        viewModel.tableView = showListChatTableViewCell
+        viewModel.addFriendListener()
         showListChatTableViewCell.delegate = self
         showListChatTableViewCell.dataSource = self
         showListChatTableViewCell.register(UINib(nibName: "ChatListCell", bundle: nil), forCellReuseIdentifier: "chatList")
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 extension ChatListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return viewModel.getChatListSize()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellData = viewModel.getFriendChat(index: indexPath.row)
         let cell = showListChatTableViewCell.dequeueReusableCell(withIdentifier: "chatList", for: indexPath) as! ChatListCell
         return cell
     }
